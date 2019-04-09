@@ -1,0 +1,57 @@
+.label {
+    -fx-text-fill:white;
+}
+.launch_btn {
+    -fx-border-width:1px;
+    -fx-border-color:#689F38;
+    -fx-border-radius:0;
+    -fx-background-insets: 0;
+    -fx-background-color:#689F38;
+    -fx-text-fill:#fff;
+    -fx-font-weight:bold;
+}
+.launch_btn:hover{
+    -fx-background-color:#689F38;
+    -fx-cursor: hand;
+    -fx-border-color:#fff;
+}
+.play{
+    -fx-text-fill:white;
+    -fx-padding: 0 12px 0 6px;
+}
+.checkbox{
+    -fx-font-weight:bold;
+    -fx-text-fill:white;
+}
+.checkbox .box {
+    visibility: hidden;
+    -fx-background-color: none;
+}
+.checkbox:selected{
+    -fx-text-fill:#689F38;
+}
+.boat_select_btn{
+    -fx-background-color: #3b3b3b;
+    -fx-text-fill:white;
+    -fx-background-radius: 0;
+}
+.boat_select_btn:hover{
+    -fx-border-color: #689F38;
+    -fx-border-width:0 0 0 2px;
+    -fx-cursor: hand;
+}
+.boat_select_label{
+    -fx-text-fill:white;
+}
+
+.radio-button{
+    -fx-background-color: #3b3b3b;
+    -fx-text-fill:white;
+    -fx-background-radius: 0;
+}
+
+.radio-button:hover{
+    -fx-border-color: #689F38;
+    -fx-border-width:0 0 0 2px;
+    -fx-cursor: hand;
+}
