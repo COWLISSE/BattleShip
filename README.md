@@ -2,11 +2,7 @@
 
 ## Introduction
 
-> This is an online BattleShip game fully working in Java. Using JavaFX. Netty.io and Gson, we have been developed a replica of the board game that we all played when we were younger. This project is a school project that we pushed way further than we had to do.
-
-## Code Samples
-
-
+> This is an online BattleShip game fully working in Java. Using JavaFX. Netty.io and Gson, we have developed a replica of the board game that we all played when we were younger. This project is a school project that we pushed way further than we had to do.
 
 ## Installation
 
