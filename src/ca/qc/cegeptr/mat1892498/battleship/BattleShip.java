@@ -20,7 +20,6 @@ public class BattleShip extends Application {
             } catch (InterruptedException e) {
                 System.err.println("Unable to connect to default server");
             }
-            Client.SERVER.writeAndFlush(new Response("{'test': 'salut je suis un texte'}"));
         }).start();
         launch(args);
         System.exit(0);

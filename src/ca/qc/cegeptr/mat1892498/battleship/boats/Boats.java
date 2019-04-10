@@ -1,7 +1,5 @@
 package ca.qc.cegeptr.mat1892498.battleship.boats;
 
-import java.util.ArrayList;
-
 public enum Boats {
 
     CARRIER(5, "Carrier"),
@@ -10,19 +8,20 @@ public enum Boats {
     SUBMARINE(3, "Submarine"),
     DESTROYER(2, "Destroyer");
 
-    private final int width;
+    private final int length;
     private final String name;
-    private final Dirs direction;
-    private static ArrayList<String> boatPos = new ArrayList<>();
+    private Dirs direction;
 
-    Boats(int width, String name){
-        this.width = width;
+
+
+    Boats(int length, String name){
+        this.length = length;
         this.name = name;
         this.direction = Dirs.EAST;
     }
 
-    public int getWidth() {
-        return width;
+    public int getLength() {
+        return length;
     }
 
     public String getName() {
@@ -33,21 +32,21 @@ public enum Boats {
         return direction;
     }
 
-    public static ArrayList<String> getBoatPos() {
-        return boatPos;
+    public void setDirection(Dirs direction) {
+        this.direction = direction;
     }
 
-    public static void setBoatPos(ArrayList<String> boatPos) {
-        Boats.boatPos = boatPos;
-    }
+
+
+
+
 
     @Override
     public String toString() {
         return "Boats{" +
-                "width=" + width +
+                "length=" + length +
                 ", name='" + name + '\'' +
                 ", direction=" + direction +
-                ",oatPos=" + boatPos +
                 '}';
     }
 }

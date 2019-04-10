@@ -21,7 +21,7 @@ import java.net.URL;
 import java.nio.file.FileSystems;
 import java.util.ResourceBundle;
 
-public class mainController implements Initializable {
+public class    mainController implements Initializable {
 
     public @FXML CheckBox lang_fr;
     public @FXML CheckBox lang_en;
@@ -45,7 +45,6 @@ public class mainController implements Initializable {
     public void changingScene(ActionEvent event) throws IOException {
         Parent boat_selector = FXMLLoader.load(getClass().getResource("/ca/qc/cegeptr/mat1892498/battleship/layouts/boatSelector.fxml"));
         Scene boatSelector = new Scene(boat_selector);
-//        Stage boatSelectorStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         BattleShip.primary.setScene(boatSelector);
         BattleShip.primary.setTitle("BattleShip - Boat Selector");
         BattleShip.primary.setScene(boatSelector);
