@@ -13,6 +13,15 @@ public class BattleShip extends Application {
 
     public static Stage primary;
 
+    public static void sendPacket(String json){
+        if(Client.SERVER != null){
+            Client.SERVER.channel().writeAndFlush(new Response(json));
+        }else{
+            System.err.println("Failed to send packet to the server (Client is not connected)");
+            //TODO: Add error message
+        }
+    }
+
     public static void main(String[] args) {
         new Thread(() -> {
             try {

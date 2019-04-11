@@ -1,6 +1,9 @@
 package ca.qc.cegeptr.mat1892498.battleship.controllers;
 
+import ca.qc.cegeptr.mat1892498.battleship.BattleShip;
 import ca.qc.cegeptr.mat1892498.battleship.boats.*;
+import ca.qc.cegeptr.mat1892498.battleship.socket.Client;
+import ca.qc.cegeptr.mat1892498.battleship.socket.Response;
 import com.google.gson.Gson;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -43,19 +46,20 @@ public class boatSelectorController implements Initializable {
         manager.addBoat(new Boat(Boats.DESTROYER, destroyer));
         placingBoats();
         rotate();
-        translate();
+//        translate();
+
         play.setOnAction(e -> {
             for(int i = 0; i < boatJsons.length; i++)
                 boatJsons[i] = new BoatJson(Boat.getBoatPos().get(i));
             Gson gson = new Gson();
-            System.out.println("{ 'bateaux': " + gson.toJson(boatJsons) + "}");
+            String json = "{'bateaux': " + gson.toJson(boatJsons) + "}";
+            BattleShip.sendPacket(json);
         });
     }
 
     private void placingBoats() {
         grid.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
             int i, j = 0, index = 0, x = (int) (event.getX() * 10 / grid.getWidth()), y = (int) (event.getY() * 10 / grid.getHeight());
-            boolean valid;
 
             for (i = 0; i < manager.getBoats().size(); i++)
                 if (manager.getBoats().get(i).getBtn().isSelected()) {
@@ -103,7 +107,7 @@ public class boatSelectorController implements Initializable {
 
             switch (manager.getBoats().get(index).getType().getDirection()) {
                 case EAST:
-                    if (y + j < 10) {
+                    if (y + j <= 10) {
                         for (i = 0; i < j; i++) {
                             grid.getChildren().remove(boat.get(index)[i]);
                             x = Integer.parseInt(Boat.getBoatPos().get(index)[i].split(",")[0]) - i;
@@ -119,7 +123,7 @@ public class boatSelectorController implements Initializable {
                     }
                     break;
                 case SOUTH:
-                    if (x - j >= 0) {
+                    if (x - j + 1 >= 0) {
                         for (i = 0; i < j; i++) {
                             grid.getChildren().remove(boat.get(index)[i]);
                             x = Integer.parseInt(Boat.getBoatPos().get(index)[i].split(",")[0]) - i;
@@ -135,7 +139,7 @@ public class boatSelectorController implements Initializable {
                     }
                     break;
                 case WEST:
-                    if (y - j >= 0) {
+                    if (y - j + 1 >= 0) {
                         for (i = 0; i < j; i++) {
                             grid.getChildren().remove(boat.get(index)[i]);
                             x = Integer.parseInt(Boat.getBoatPos().get(index)[i].split(",")[0]) + i;
@@ -151,7 +155,7 @@ public class boatSelectorController implements Initializable {
                     }
                     break;
                 case NORTH:
-                    if (x + j < 10) {
+                    if (x + j <= 10) {
                         for (i = 0; i < j; i++) {
                             grid.getChildren().remove(boat.get(index)[i]);
                             x = Integer.parseInt(Boat.getBoatPos().get(index)[i].split(",")[0]) + i;
@@ -179,7 +183,7 @@ public class boatSelectorController implements Initializable {
 
     private void translate() {
         right.setOnAction(event -> {
-            int index = 0, i, j = 0, x , y;
+            int index = 0, i, j = 0, x , y = 0;
 
             for (i = 0; i < manager.getBoats().size(); i++)
                 if (manager.getBoats().get(i).getBtn().isSelected()) {
@@ -191,7 +195,8 @@ public class boatSelectorController implements Initializable {
             String[] boatPos = new String[j];
 
             x = Integer.parseInt(Boat.getBoatPos().get(index)[0].split(",")[0]);
-            if (x + 1 < 10) {
+            y = Integer.parseInt(Boat.getBoatPos().get(index)[j - 1].split(",")[0]);
+            if (x + 1 < 10 && y + 1 < 10) {
                 for (i = 0; i < j; i++) {
                     grid.getChildren().remove(boat.get(index)[i]);
                     x = Integer.parseInt(Boat.getBoatPos().get(index)[i].split(",")[0]) + 1;
@@ -219,7 +224,8 @@ public class boatSelectorController implements Initializable {
             String[] boatPos = new String[j];
 
             x = Integer.parseInt(Boat.getBoatPos().get(index)[0].split(",")[0]);
-            if (x - 1 < 10) {
+            y = Integer.parseInt(Boat.getBoatPos().get(index)[j - 1].split(",")[0]);
+            if (x - 1 >= 0 && y - 1 >= 0) {
                 for (i = 0; i < j; i++) {
                     grid.getChildren().remove(boat.get(index)[i]);
                     x = Integer.parseInt(Boat.getBoatPos().get(index)[i].split(",")[0]) - 1;
@@ -232,7 +238,6 @@ public class boatSelectorController implements Initializable {
                 boat.set(index, rectangles);
                 Boat.getBoatPos().set(index, boatPos);
             }
-
         });
     }
 }
