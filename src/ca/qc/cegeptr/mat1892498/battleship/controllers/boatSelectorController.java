@@ -2,8 +2,6 @@ package ca.qc.cegeptr.mat1892498.battleship.controllers;
 
 import ca.qc.cegeptr.mat1892498.battleship.BattleShip;
 import ca.qc.cegeptr.mat1892498.battleship.boats.*;
-import ca.qc.cegeptr.mat1892498.battleship.socket.Client;
-import ca.qc.cegeptr.mat1892498.battleship.socket.Response;
 import com.google.gson.Gson;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -46,13 +44,13 @@ public class boatSelectorController implements Initializable {
         manager.addBoat(new Boat(Boats.DESTROYER, destroyer));
         placingBoats();
         rotate();
-//        translate();
+        translate();
 
         play.setOnAction(e -> {
             for(int i = 0; i < boatJsons.length; i++)
                 boatJsons[i] = new BoatJson(Boat.getBoatPos().get(i));
             Gson gson = new Gson();
-            String json = "{'bateaux': " + gson.toJson(boatJsons) + "}";
+            String json = "{'boats': " + gson.toJson(boatJsons) + "}";
             BattleShip.sendPacket(json);
         });
     }

@@ -2,8 +2,8 @@ package ca.qc.cegeptr.mat1892498.battleship.boats;
 
 public class BoatJson {
 
-    String[] pos;
-    String direction;
+    private String[] pos;
+    private String direction;
 
     public BoatJson(String[] pos){
         this.pos = pos;

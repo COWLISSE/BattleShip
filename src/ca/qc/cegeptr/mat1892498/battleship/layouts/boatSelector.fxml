@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="643.0" prefWidth="852.0" style="-fx-background-color: #424242;" stylesheets="@css/main.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.qc.cegeptr.mat1892498.battleship.controllers.boatSelectorController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="643.0" prefWidth="852.0" style="-fx-background-color: #424242;" stylesheets="@../layouts/css/main.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.qc.cegeptr.mat1892498.battleship.controllers.boatSelectorController">
     <children>
         <GridPane fx:id="grid" gridLinesVisible="true" layoutX="203.0" prefHeight="643.0" prefWidth="649.0">
             <columnConstraints>
@@ -63,9 +63,19 @@
       </Button>
         <ImageView fitHeight="51.0" fitWidth="49.0" layoutX="1.0" layoutY="495.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@images/rotate.png" />
+                <Image url="@../layouts/images/rotate.png" />
             </image>
         </ImageView>
-      <Button fx:id="play" layoutX="13.0" layoutY="14.0" mnemonicParsing="false" text="Play" />
+      <Button fx:id="left" layoutX="24.0" layoutY="578.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="49.0" styleClass="radio-button" text="&lt;">
+         <font>
+            <Font name="Calibri" size="22.0" />
+         </font>
+      </Button>
+      <Button fx:id="right" layoutX="121.0" layoutY="578.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="49.0" styleClass="radio-button" text="&gt;">
+         <font>
+            <Font name="Calibri" size="22.0" />
+         </font>
+      </Button>
+      <Button fx:id="play" layoutX="17.0" layoutY="14.0" mnemonicParsing="false" text="Play" />
     </children>
 </Pane>
