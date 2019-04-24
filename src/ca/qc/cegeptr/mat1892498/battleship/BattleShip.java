@@ -11,8 +11,6 @@ import javafx.stage.Stage;
 
 public class BattleShip extends Application {
 
-    public static Stage primary;
-
     public static void sendPacket(String json){
         if(Client.SERVER != null){
             Client.SERVER.channel().writeAndFlush(new Response(json));
@@ -36,10 +34,9 @@ public class BattleShip extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        primary = primaryStage;
-        Parent main_menu = FXMLLoader.load(getClass().getResource("layouts/Main.fxml"));
+        Parent main_menu = FXMLLoader.load(getClass().getResource("./layouts/battleship_main.fxml"));
         Scene mainMenu = new Scene(main_menu);
-        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("layouts/images/battleship.png")));
+        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("./layouts/images/battleship.png")));
         primaryStage.setTitle("BattleShip - Main Menu");
         primaryStage.setScene(mainMenu);
         primaryStage.show();
