@@ -6,13 +6,15 @@ import java.util.List;
 
 public class BoatManager {
 
-    private List<Boat> boats = new ArrayList<>();
+    public static List<Boat> boats = new ArrayList<>();
+    public static boolean valid = false;
 
-    public void addBoat(Boat boat){
+    public static void addBoat(Boat boat){
         boats.add(boat);
     }
 
-    public List<Boat> getBoats() {
+    public static List<Boat> getBoats() {
         return boats;
     }
+
 }

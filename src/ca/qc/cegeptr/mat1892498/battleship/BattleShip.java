@@ -1,5 +1,6 @@
 package ca.qc.cegeptr.mat1892498.battleship;
 
+import ca.qc.cegeptr.mat1892498.battleship.components.AlertBox;
 import ca.qc.cegeptr.mat1892498.battleship.socket.Client;
 import ca.qc.cegeptr.mat1892498.battleship.socket.Response;
 import javafx.application.Application;
@@ -11,13 +12,12 @@ import javafx.stage.Stage;
 
 public class BattleShip extends Application {
 
+    public static Stage primary;
+
     public static void sendPacket(String json){
-        if(Client.SERVER != null){
+        if(Client.SERVER != null)
             Client.SERVER.channel().writeAndFlush(new Response(json));
-        }else{
-            System.err.println("Failed to send packet to the server (Client is not connected)");
-            //TODO: Add error message
-        }
+        else AlertBox.display("Error!", "Failed to send packet to the server (Server is offline)");
     }
 
     public static void main(String[] args) {
@@ -25,7 +25,7 @@ public class BattleShip extends Application {
             try {
                 new Client();
             } catch (InterruptedException e) {
-                System.err.println("Unable to connect to default server");
+                AlertBox.display("Error!", "Failed to connect to default server");
             }
         }).start();
         launch(args);
@@ -34,9 +34,10 @@ public class BattleShip extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent main_menu = FXMLLoader.load(getClass().getResource("./layouts/battleship_main.fxml"));
+        primary = primaryStage;
+        Parent main_menu = FXMLLoader.load(getClass().getResource("/ca/qc/cegeptr/mat1892498/battleship/layouts/battleship_main.fxml"));
         Scene mainMenu = new Scene(main_menu);
-        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("./layouts/images/battleship.png")));
+        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/ca/qc/cegeptr/mat1892498/battleship/layouts/images/battleship.png")));
         primaryStage.setTitle("BattleShip - Main Menu");
         primaryStage.setScene(mainMenu);
         primaryStage.show();

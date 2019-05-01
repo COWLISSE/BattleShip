@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="643.0" prefWidth="852.0" style="-fx-background-color: #424242;" stylesheets="@../layouts/css/main.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.qc.cegeptr.mat1892498.battleship.controllers.boatSelectorController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="643.0" prefWidth="852.0" style="-fx-background-color: #424242;" stylesheets="@../layouts/css/main.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.qc.cegeptr.mat1892498.battleship.controllers.BoatSelectorController">
     <children>
         <GridPane fx:id="grid" gridLinesVisible="true" layoutX="203.0" prefHeight="643.0" prefWidth="649.0">
             <columnConstraints>
