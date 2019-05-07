@@ -18,7 +18,7 @@ public class GameType {
 //        window.getIcons().add(new Image(AlertBox.class.getResourceAsStream("../layouts/images/battleship.png")));
         window.getIcons().add(new Image(AlertBox.class.getResourceAsStream("/ca/qc/cegeptr/mat1892498/battleship/layouts/images/battleship.png")));
         window.initModality(Modality.APPLICATION_MODAL);
-        window.setTitle("Game type selector");
+        window.setTitle("Game mode selector");
         window.setMinWidth(250);
 
         Button random = new Button("Random");
@@ -40,7 +40,7 @@ public class GameType {
 
         HBox hbox = new HBox(10);
 
-        Label error = new Label("Game type selector");
+        Label error = new Label("Please select a game mode");
         error.setStyle("-fx-text-fill:white; -fx-font-weight: bold;");
 
         layout.getChildren().addAll(error, hbox);

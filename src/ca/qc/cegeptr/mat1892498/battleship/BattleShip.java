@@ -1,6 +1,7 @@
 package ca.qc.cegeptr.mat1892498.battleship;
 
 import ca.qc.cegeptr.mat1892498.battleship.components.AlertBox;
+import ca.qc.cegeptr.mat1892498.battleship.components.ConfirmBox;
 import ca.qc.cegeptr.mat1892498.battleship.socket.Client;
 import ca.qc.cegeptr.mat1892498.battleship.socket.Response;
 import javafx.application.Application;
@@ -37,10 +38,18 @@ public class BattleShip extends Application {
         primary = primaryStage;
         Parent main_menu = FXMLLoader.load(getClass().getResource("/ca/qc/cegeptr/mat1892498/battleship/layouts/battleship_main.fxml"));
         Scene mainMenu = new Scene(main_menu);
-        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/ca/qc/cegeptr/mat1892498/battleship/layouts/images/battleship.png")));
-        primaryStage.setTitle("BattleShip - Main Menu");
-        primaryStage.setScene(mainMenu);
-        primaryStage.show();
+        primary.getIcons().add(new Image(getClass().getResourceAsStream("/ca/qc/cegeptr/mat1892498/battleship/layouts/images/battleship.png")));
+        primary.setTitle("BattleShip - Main Menu");
+        primary.setScene(mainMenu);
+        primary.show();
+        primary.setOnCloseRequest(e -> {
+            boolean conf = ConfirmBox.display("Already...?", "Are you sure you want to leave ?");
+            if(conf) {
+                if(Client.SERVER != null)
+                    Client.SERVER.close();
+                primary.close();
+            } else e.consume();
+        });
     }
 
 }

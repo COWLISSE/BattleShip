@@ -13,8 +13,8 @@ import javafx.stage.Stage;
 public class AlertBox {
 
     public static void display(String title, String message){
-        Stage window = createStage();
         Platform.runLater(() -> {
+            Stage window = createStage();
             window.setTitle(title);
 
             Button close = new Button("Close");
@@ -58,7 +58,7 @@ public class AlertBox {
         });
     }
 
-    private static Stage createStage(){
+    public static Stage createStage(){
         Stage window = new Stage();
         window.getIcons().add(new Image(AlertBox.class.getResourceAsStream("/ca/qc/cegeptr/mat1892498/battleship/layouts/images/battleship.png")));
         window.initModality(Modality.APPLICATION_MODAL);

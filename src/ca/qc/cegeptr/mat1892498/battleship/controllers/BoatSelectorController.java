@@ -77,15 +77,6 @@ public class BoatSelectorController implements Initializable {
         });
     }
 
-    private void changingScene(ActionEvent event) throws IOException {
-        Parent game = FXMLLoader.load(getClass().getResource("/ca/qc/cegeptr/mat1892498/battleship/layouts/game.fxml"));
-        Scene gameBoard = new Scene(game);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setTitle("BattleShip - Game");
-        stage.setScene(gameBoard);
-        stage.show();
-    }
-
     private void placingBoats() {
         grid.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
             BoatManager.valid = false;
