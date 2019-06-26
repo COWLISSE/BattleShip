@@ -16,6 +16,7 @@ import javafx.scene.control.*;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
@@ -30,9 +31,14 @@ import static ca.qc.cegeptr.mat1892498.battleship.boats.Dirs.*;
 
 public class BoatSelectorController implements Initializable {
 
-    private @FXML GridPane grid;
-    private @FXML RadioButton carrier, battleship, cruiser, submarine, destroyer;
-    private @FXML Button rotation, left, right, start;
+    public ColorPicker colorPicker = new ColorPicker(Color.BLUE);
+    private @FXML
+    GridPane grid;
+    private @FXML
+    RadioButton carrier, battleship, cruiser, submarine, destroyer;
+    private @FXML
+    Button rotation, left, right, start;
+    private BoatManager manager = new BoatManager();
     private int[] freq = new int[5];
     private String[] boatPosTemp;
     private int size, index, x, y;
@@ -57,23 +63,23 @@ public class BoatSelectorController implements Initializable {
         rotate();
         translate();
         play();
+
     }
 
-    private void play(){
+    private void play() {
         start.setOnAction(e -> {
-            if(Client.SERVER != null){
+            if (Client.SERVER != null) {
                 boatJsons.clear();
-                for(int i = 0; i < 5; i++) {
-                    if(!Arrays.toString(Boat.getBoatPos().get(i)).contains("null"))
+                for (int i = 0; i < 5; i++) {
+                    if (!Arrays.toString(Boat.getBoatPos().get(i)).contains("null"))
                         boatJsons.add(new BoatJson(Boat.getBoatPos().get(i)));
                 }
-                if(boatJsons.size() == 5) {
+                if (boatJsons.size() == 5) {
                     String json = "{'boats': " + Client.GSON.toJson(boatJsons) + "}";
                     BattleShip.sendPacket(json);
                     GameType.choiceSelector();
-                    AlertBox.displayText("Queue", "You're currently in queue, please wait !");
-                }else AlertBox.display("Error!", "Boats are not all placed !");
-            }else AlertBox.display("Error!", "The server is offline");
+                } else AlertBox.display("Error!", "Boats are not all placed !");
+            } else AlertBox.display("Error!", "The server is offline");
         });
     }
 
@@ -232,11 +238,9 @@ public class BoatSelectorController implements Initializable {
     }
 
     private void createRectangle(int i, Rectangle[] rectangles) {
-        Paint color = Color.color(0,0,0);
-        for(int j = 0; j < BoatManager.getBoats().size(); j++){
-            if(BoatManager.getBoats().get(j).getBtn().isSelected())
-                color = BoatManager.getBoats().get(j).getColor();
-        }
+        Paint color;
+        BoatManager.getBoats().get(i).setColor(colorPicker);
+        color = BoatManager.getBoats().get(i).getColor().getValue();
         rectangles[i] = new Rectangle(grid.getWidth() / 10, grid.getHeight() / 10);
         rectangles[i].setFill(color);
         rectangles[i].setEffect(new DropShadow(10, Color.BLACK));
@@ -303,3 +307,4 @@ public class BoatSelectorController implements Initializable {
         }
     }
 }
+

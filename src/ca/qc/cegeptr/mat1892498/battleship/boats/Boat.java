@@ -1,8 +1,7 @@
 package ca.qc.cegeptr.mat1892498.battleship.boats;
 
+import javafx.scene.control.ColorPicker;
 import javafx.scene.control.RadioButton;
-import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,7 +16,7 @@ public class Boat {
             new String[3],
             new String[2]
     ));
-    private Paint color = Color.color(Math.random(), Math.random(), Math.random());
+    private ColorPicker color;
 
 
     public Boat(Boats type, RadioButton btn){
@@ -37,7 +36,11 @@ public class Boat {
         return boatPos;
     }
 
-    public Paint getColor() {
+    public void setColor(ColorPicker color) {
+        this.color = color;
+    }
+
+    public ColorPicker getColor() {
         return this.color;
     }
 }

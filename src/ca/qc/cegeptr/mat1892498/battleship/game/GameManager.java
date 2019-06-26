@@ -2,6 +2,8 @@ package ca.qc.cegeptr.mat1892498.battleship.game;
 
 import ca.qc.cegeptr.mat1892498.battleship.boats.Boat;
 import ca.qc.cegeptr.mat1892498.battleship.boats.BoatManager;
+import ca.qc.cegeptr.mat1892498.battleship.controllers.GameController;
+import ca.qc.cegeptr.mat1892498.battleship.controllers.MainController;
 import ca.qc.cegeptr.mat1892498.battleship.game.boards.Board;
 import ca.qc.cegeptr.mat1892498.battleship.game.boards.Opponent;
 import ca.qc.cegeptr.mat1892498.battleship.game.boards.Player;
@@ -19,6 +21,7 @@ public class GameManager {
     private static boolean turn = false;
     private static Map<String, Board> boards = new HashMap<>();
     private static Map<String, GridPane> grids = new HashMap<>();
+    private static Map<String, GameController> controllers = new HashMap<>();
     public static String opponentName = "Unknown";
 
     public static void startGame(){
@@ -46,6 +49,15 @@ public class GameManager {
         boards.get("player").hit("player", pos, hit.get());
     }
 
+    public static void chat(String name, String message){
+        controllers.forEach((type, controller) -> {
+//            if(type.equals("player"))
+//                playerName = MainController.username;
+//            else playerName = ((Opponent) boards.get("opponent")).getUsername();
+            Board.displayMessage(controller, message, name);
+        });
+    }
+
     public static void hitResponse(String pos, boolean hit){
         boards.get("opponent").hit("opponent", pos, hit);
     }
@@ -67,6 +79,12 @@ public class GameManager {
         if(grids.size() == 0)
             grids.put("player", grid);
         else grids.put("opponent", grid);
+    }
+
+    public static void addController(GameController controller){
+        if(controllers.size() == 0)
+            controllers.put("player", controller);
+        else controllers.put("opponent", controller);
     }
 
     public static boolean getTurn(){

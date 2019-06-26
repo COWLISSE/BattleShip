@@ -29,7 +29,7 @@ public class Client {
                     ch.pipeline().addLast(new RequestEncoder(), new ResponseDecoder(), new ClientHandler());
                 }
             });
-            ChannelFuture f = b.connect("localhost", 30000).sync();
+            ChannelFuture f = b.connect("51.254.161.172", 30000).sync();
             f.channel().closeFuture().sync();
         } finally {
             workerGroup.shutdownGracefully();

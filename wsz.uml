@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="143.28520021645022" y="854.5">ca.qc.cegeptr.mat1892498.battleship.components.GameState</node>
+    <node x="64.5" y="1889.0">ca.qc.cegeptr.mat1892498.battleship.controllers.GameController</node>
+    <node x="711.8263257575757" y="2467.0">ca.qc.cegeptr.mat1892498.battleship.game.boards.Opponent</node>
+    <node x="278.0" y="1424.5">ca.qc.cegeptr.mat1892498.battleship.actions.ActionHandler</node>
+    <node x="634.409659090909" y="854.5">ca.qc.cegeptr.mat1892498.battleship.components.GameType</node>
+    <node x="355.81412337662346" y="599.5">ca.qc.cegeptr.mat1892498.battleship.components.AlertBox</node>
+    <node x="840.1142045454544" y="821.0">ca.qc.cegeptr.mat1892498.battleship.boats.BoatManager</node>
+    <node x="633.2334686147186" y="2255.0">ca.qc.cegeptr.mat1892498.battleship.game.boards.Board</node>
+    <node x="1143.018668831169" y="0.0">ca.qc.cegeptr.mat1892498.battleship.boats.Dirs</node>
+    <node x="754.5" y="1402.0">ca.qc.cegeptr.mat1892498.battleship.game.boards.Player</node>
+    <node x="961.8546807359307" y="167.0">ca.qc.cegeptr.mat1892498.battleship.boats.Boats</node>
+    <node x="1154.75" y="832.0">ca.qc.cegeptr.mat1892498.battleship.boats.BoatJson</node>
+    <node x="385.40965909090903" y="854.5">ca.qc.cegeptr.mat1892498.battleship.components.ConfirmBox</node>
+    <node x="933.5" y="1039.0">ca.qc.cegeptr.mat1892498.battleship.controllers.BoatSelectorController</node>
+    <node x="871.2713474025975" y="533.0">ca.qc.cegeptr.mat1892498.battleship.boats.Boat</node>
+    <node x="0.0" y="1336.0">ca.qc.cegeptr.mat1892498.battleship.controllers.MainController</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="ca.qc.cegeptr.mat1892498.battleship.controllers.BoatSelectorController" target="ca.qc.cegeptr.mat1892498.battleship.boats.BoatManager">
+      <point x="-32.18181818181813" y="-400.0" />
+      <point x="1078.3181818181818" y="959.0" />
+      <point x="1006.6142045454545" y="959.0" />
+      <point x="74.00000000000006" y="59.0" />
+    </edge>
+    <edge source="ca.qc.cegeptr.mat1892498.battleship.actions.ActionHandler" target="ca.qc.cegeptr.mat1892498.battleship.components.GameState">
+      <point x="-41.33333333333326" y="-14.5" />
+      <point x="298.66666666666674" y="1019.0" />
+      <point x="247.28520021645022" y="1019.0" />
+      <point x="0.0" y="25.5" />
+    </edge>
+    <edge source="ca.qc.cegeptr.mat1892498.battleship.controllers.GameController" target="ca.qc.cegeptr.mat1892498.battleship.controllers.MainController">
+      <point x="-64.5" y="-158.0" />
+      <point x="0.0" y="103.0" />
+    </edge>
+    <edge source="ca.qc.cegeptr.mat1892498.battleship.boats.BoatManager" target="ca.qc.cegeptr.mat1892498.battleship.boats.Boat">
+      <point x="-46.24999999999994" y="-59.0" />
+      <point x="886.3642045454545" y="801.0" />
+      <point x="943.2713474025975" y="801.0" />
+      <point x="-48.0" y="114.0" />
+    </edge>
+    <edge source="ca.qc.cegeptr.mat1892498.battleship.controllers.GameController" target="ca.qc.cegeptr.mat1892498.battleship.game.boards.Player">
+      <point x="64.5" y="-158.0" />
+      <point x="258.0" y="1864.0" />
+      <point x="781.0" y="1864.0" />
+      <point x="-53.0" y="37.0" />
+    </edge>
+    <edge source="ca.qc.cegeptr.mat1892498.battleship.game.boards.Opponent" target="ca.qc.cegeptr.mat1892498.battleship.game.boards.Board">
+      <point x="50.5" y="-48.0" />
+      <point x="863.3263257575757" y="2442.0" />
+      <point x="891.2334686147186" y="2442.0" />
+      <point x="86.0" y="81.0" />
+    </edge>
+    <edge source="ca.qc.cegeptr.mat1892498.battleship.components.GameState" target="ca.qc.cegeptr.mat1892498.battleship.components.AlertBox">
+      <point x="0.0" y="-25.5" />
+      <point x="247.28520021645022" y="781.0" />
+      <point x="378.9141233766235" y="781.0" />
+      <point x="-92.39999999999998" y="47.5" />
+    </edge>
+    <edge source="ca.qc.cegeptr.mat1892498.battleship.boats.Boat" target="ca.qc.cegeptr.mat1892498.battleship.boats.Boats">
+      <point x="-60.00000000000006" y="-114.0" />
+      <point x="931.2713474025974" y="508.0" />
+      <point x="993.0213474025974" y="508.0" />
+      <point x="-62.333333333333314" y="158.0" />
+    </edge>
+    <edge source="ca.qc.cegeptr.mat1892498.battleship.game.boards.Player" target="ca.qc.cegeptr.mat1892498.battleship.game.boards.Board">
+      <point x="0.0" y="37.0" />
+      <point x="834.0" y="1864.0" />
+      <point x="855.0" y="1864.0" />
+      <point x="855.0" y="2230.0" />
+      <point x="805.2334686147186" y="2230.0" />
+      <point x="0.0" y="-81.0" />
+    </edge>
+    <edge source="ca.qc.cegeptr.mat1892498.battleship.game.boards.Player" target="ca.qc.cegeptr.mat1892498.battleship.boats.BoatManager">
+      <point x="39.75" y="-37.0" />
+      <point x="873.75" y="1019.0" />
+      <point x="895.6142045454544" y="1019.0" />
+      <point x="-37.0" y="59.0" />
+    </edge>
+    <edge source="ca.qc.cegeptr.mat1892498.battleship.controllers.BoatSelectorController" target="ca.qc.cegeptr.mat1892498.battleship.components.GameType">
+      <point x="-128.7272727272727" y="-400.0" />
+      <point x="981.7727272727273" y="989.0" />
+      <point x="724.409659090909" y="989.0" />
+      <point x="0.0" y="25.5" />
+    </edge>
+    <edge source="ca.qc.cegeptr.mat1892498.battleship.actions.ActionHandler" target="ca.qc.cegeptr.mat1892498.battleship.boats.BoatManager">
+      <point x="41.33333333333326" y="-14.5" />
+      <point x="381.33333333333326" y="1019.0" />
+      <point x="858.6142045454544" y="1019.0" />
+      <point x="-74.0" y="59.0" />
+    </edge>
+    <edge source="ca.qc.cegeptr.mat1892498.battleship.controllers.BoatSelectorController" target="ca.qc.cegeptr.mat1892498.battleship.components.AlertBox">
+      <point x="-160.90909090909088" y="-400.0" />
+      <point x="949.590909090909" y="999.0" />
+      <point x="374.90965909090903" y="999.0" />
+      <point x="374.90965909090903" y="801.0" />
+      <point x="471.31412337662346" y="801.0" />
+      <point x="0.0" y="47.5" />
+    </edge>
+    <edge source="ca.qc.cegeptr.mat1892498.battleship.components.GameType" target="ca.qc.cegeptr.mat1892498.battleship.components.AlertBox">
+      <point x="0.0" y="-25.5" />
+      <point x="724.409659090909" y="801.0" />
+      <point x="563.7141233766235" y="801.0" />
+      <point x="92.40000000000009" y="47.5" />
+    </edge>
+    <edge source="ca.qc.cegeptr.mat1892498.battleship.game.boards.Board" target="ca.qc.cegeptr.mat1892498.battleship.controllers.GameController">
+      <point x="-114.66666666666669" y="-81.0" />
+      <point x="690.566801948052" y="2230.0" />
+      <point x="193.5" y="2230.0" />
+      <point x="0.0" y="158.0" />
+    </edge>
+    <edge source="ca.qc.cegeptr.mat1892498.battleship.game.boards.Player" target="ca.qc.cegeptr.mat1892498.battleship.boats.Boat">
+      <point x="-39.75" y="-37.0" />
+      <point x="794.25" y="1009.0" />
+      <point x="824.909659090909" y="1009.0" />
+      <point x="824.909659090909" y="791.0" />
+      <point x="895.2713474025975" y="791.0" />
+      <point x="-96.0" y="114.0" />
+    </edge>
+    <edge source="ca.qc.cegeptr.mat1892498.battleship.controllers.BoatSelectorController" target="ca.qc.cegeptr.mat1892498.battleship.boats.Boat">
+      <point x="0.0" y="-400.0" />
+      <point x="1110.5" y="1019.0" />
+      <point x="1116.6142045454544" y="1019.0" />
+      <point x="1116.6142045454544" y="801.0" />
+      <point x="1039.2713474025973" y="801.0" />
+      <point x="47.99999999999994" y="114.0" />
+    </edge>
+    <edge source="ca.qc.cegeptr.mat1892498.battleship.controllers.BoatSelectorController" target="ca.qc.cegeptr.mat1892498.battleship.boats.Boats">
+      <point x="64.36363636363637" y="-400.0" />
+      <point x="1174.8636363636363" y="1009.0" />
+      <point x="1144.25" y="1009.0" />
+      <point x="1144.25" y="508.0" />
+      <point x="1117.688014069264" y="508.0" />
+      <point x="62.33333333333337" y="158.0" />
+    </edge>
+    <edge source="ca.qc.cegeptr.mat1892498.battleship.controllers.BoatSelectorController" target="ca.qc.cegeptr.mat1892498.battleship.boats.Dirs">
+      <point x="160.90909090909088" y="-400.0" />
+      <point x="1271.4090909090908" y="1019.0" />
+      <point x="1332.25" y="1019.0" />
+      <point x="1332.25" y="147.0" />
+      <point x="1208.018668831169" y="147.0" />
+      <point x="26.0" y="58.5" />
+    </edge>
+    <edge source="ca.qc.cegeptr.mat1892498.battleship.boats.Boats" target="ca.qc.cegeptr.mat1892498.battleship.boats.Dirs">
+      <point x="-46.75" y="-158.0" />
+      <point x="1008.6046807359307" y="137.0" />
+      <point x="1156.018668831169" y="137.0" />
+      <point x="-26.0" y="58.5" />
+    </edge>
+    <edge source="ca.qc.cegeptr.mat1892498.battleship.actions.ActionHandler" target="ca.qc.cegeptr.mat1892498.battleship.components.AlertBox">
+      <point x="0.0" y="-14.5" />
+      <point x="340.0" y="1019.0" />
+      <point x="361.7852002164502" y="1019.0" />
+      <point x="361.7852002164502" y="791.0" />
+      <point x="425.1141233766234" y="791.0" />
+      <point x="-46.200000000000045" y="47.5" />
+    </edge>
+    <edge source="ca.qc.cegeptr.mat1892498.battleship.components.ConfirmBox" target="ca.qc.cegeptr.mat1892498.battleship.components.AlertBox">
+      <point x="0.0" y="-25.5" />
+      <point x="499.90965909090903" y="801.0" />
+      <point x="517.5141233766235" y="801.0" />
+      <point x="46.200000000000045" y="47.5" />
+    </edge>
+    <edge source="ca.qc.cegeptr.mat1892498.battleship.controllers.BoatSelectorController" target="ca.qc.cegeptr.mat1892498.battleship.boats.BoatJson">
+      <point x="96.5454545454545" y="-400.0" />
+      <point x="1207.0454545454545" y="1019.0" />
+      <point x="1196.5" y="1019.0" />
+      <point x="-41.75" y="48.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.8" x="12.85714285714289" y="419.142857142857" />
+  <SelectedNodes>
+    <node>ca.qc.cegeptr.mat1892498.battleship.boats.Boats</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

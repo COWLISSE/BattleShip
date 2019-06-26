@@ -24,7 +24,7 @@ public class Player extends Board {
                     for (String s : boat) {
                         String[] pos = s.split(",");
                         Rectangle rect = new Rectangle(GameManager.getGrids().get("player").getWidth() / 10, GameManager.getGrids().get("player").getHeight() / 10);
-                        rect.setFill(BoatManager.getBoats().get(index.get()).getColor());
+                        rect.setFill(BoatManager.getBoats().get(index.get()).getColor().getValue());
                         rect.setEffect(new DropShadow(10, Color.BLACK));
                         GameManager.getGrids().get("player").add(rect, Integer.parseInt(pos[0]), Integer.parseInt(pos[1]));
                     }
